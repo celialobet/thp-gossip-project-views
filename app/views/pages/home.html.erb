@@ -1,17 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">The Gossip Project</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <%= link_to "Home", root_path, class: "nav-link active"%>
-        <%= link_to "Team", team_path, class: "nav-link"%>
-        <%= link_to "Contact", contact_path, class: "nav-link"%>
-      </div>
+<h1>Bienvenue sur The Gossip Project !</h1>
+<p>Voici les potins en stock :</p>
+
+
+<% @gossips.each do |gossip| %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= gossip.title %></h5>
+      <h6 class="card-subtitle mb-2 text-muted">Potin n°<%= gossip.id%></h6>
+      <p class="card-text">Potin rapporté par <%= link_to "#{gossip.user.first_name}" %></p>
+      <%= link_to "Voir le potin", {controller: "pages", action: "show_gossip", id: gossip.id}, class: "btn btn-primary mt-3" %>
     </div>
   </div>
-</nav>
-
-<h1>Bienvenue sur The Gossip Project !</h1>
+<% end %>
