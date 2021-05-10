@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   end
 
   def show_author
-    @show_specific_author = User.find_by(first_name: params[:first_name])
+    @user = User.find(params[:id])
   end  
 
 end

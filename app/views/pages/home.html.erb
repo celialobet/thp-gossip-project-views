@@ -1,14 +1,14 @@
-<h1>Bienvenue sur The Gossip Project !</h1>
-<p>Voici les potins en stock :</p>
+<h1>Welcome to The Gossip Project !</h1>
+<p>Here are our juicy gossips:</p>
 
 
 <% @gossips.each do |gossip| %>
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title"><%= gossip.title %></h5>
-      <h6 class="card-subtitle mb-2 text-muted">Potin n°<%= gossip.id%></h6>
-      <p class="card-text">Potin rapporté par <%= link_to "#{gossip.user.first_name}" %></p>
-      <%= link_to "Voir le potin", {controller: "pages", action: "show_gossip", id: gossip.id}, class: "btn btn-primary mt-3" %>
+      <h6 class="card-subtitle mb-2 text-muted">Gossip n°<%= gossip.id%></h6>
+      <p class="card-text">Author of the gossip: <%= link_to "#{gossip.user.first_name}",{controller: "pages", action: "show_user", id: gossip.id} %></p>
+      <%= link_to "Read the gossip", {controller: "pages", action: "show_gossip", id: gossip.id}, class: "btn btn-primary mt-3" %>
     </div>
   </div>
 <% end %>
