@@ -5,3 +5,45 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+User.destroy_all
+City.destroy_all
+Gossip.destroy_all
+Tag.destroy_all
+PrivateMessage.destroy_all
+
+10.times do
+  city = City.create!(
+    city: Faker::Address.city, 
+    zip_code: Faker::Address.zip_code)
+end
+
+10.times do
+  user = User.create!(
+    first_name: Faker::Name.first_name, 
+    last_name: Faker::Name.last_name, 
+    description: Faker::Lorem.sentence(word_count: 10), 
+    email: Faker::Internet.email, 
+    age: rand(15..75), 
+    city_id: City.all.sample)
+end
+
+
+20.times do
+  gossip = Gossip.create!(user_id: User.all.sample, 
+    title: Faker::TvShows::BojackHorseman.character, 
+    content: Faker::TvShows::BojackHorseman.quote)
+end
+
+10.times do
+  tag = Tag.create!(title: Faker::Lorem.words)
+end
+
+40.times do
+  private_message = PrivateMessage.create!(
+  content: Faker::Lorem.sentence(word_count: 5),
+  sender: User.all.sample,
+  recipient: User.all.sample
+  )
+end
