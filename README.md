@@ -1,29 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby version 2.7.1'
 
-Things you may want to cover:
+- Rails 5.2.6
 
-- Ruby version
+- Instructions:
 
-- System dependencies
-
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-$ bundle install
-$ rails db:create
-$ rails db:migrate
-$ rails db:seed
-$ rails server
-localhost:3000
+- $ bundle install
+- $ rails db:create
+- $ rails db:migrate
+- $ rails db:seed
+- $ rails server
+- localhost:3000
