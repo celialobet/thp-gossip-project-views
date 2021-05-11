@@ -7,7 +7,7 @@
     <div class="card-body">
       <h5 class="card-title"><%= gossip.title %></h5>
       <h6 class="card-subtitle mb-2 text-muted">Gossip n°<%= gossip.id%></h6>
-      <p class="card-text">Author of the gossip: <%= link_to "#{gossip.user.first_name}",{controller: "pages", action: "show_user", id: gossip.id} %></p>
+      <p class="card-text">Author of the gossip: <%= link_to "#{gossip.user.first_name}",{controller: "pages", action: "show_author", id: gossip.id} %></p>
       <%= link_to "Read the gossip", {controller: "pages", action: "show_gossip", id: gossip.id}, class: "btn btn-primary mt-3" %>
     </div>
   </div>

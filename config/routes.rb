@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
   get '/welcome/:user_name', to: 'pages#welcome'
   get '/gossip/:id', to: 'pages#show_gossip'
-  get '/user/:id', to: 'pages#show_user'
+  get '/user/:id', to: 'pages#show_author'
 end
